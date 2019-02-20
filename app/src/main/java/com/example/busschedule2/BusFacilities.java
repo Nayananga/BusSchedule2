@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class BusFacilities extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class BusFacilities extends AppCompatActivity {
         setContentView(R.layout.activity_bus_facilities);
 
         configureBackButton2();
+        configureConfirmButton();
 
     }
     private void configureBackButton2(){
@@ -22,6 +24,18 @@ public class BusFacilities extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+    }
+
+    private void  configureConfirmButton(){
+        Button confirmButton = (Button) findViewById(R.id.confirmButton);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast  toast = Toast.makeText(getApplicationContext(), "Thank You", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }

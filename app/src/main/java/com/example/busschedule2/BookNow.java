@@ -13,6 +13,7 @@ public class BookNow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_now);
         configureBookButton();
+        configureCancelButton();
     }
 
     private void configureBookButton(){
@@ -21,6 +22,16 @@ public class BookNow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BookNow.this,BusList.class));
+            }
+        });
+    }
+
+    private void configureCancelButton(){
+        Button backButton = (Button) findViewById(R.id.cancelButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
